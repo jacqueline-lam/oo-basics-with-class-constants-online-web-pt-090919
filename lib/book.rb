@@ -1,9 +1,18 @@
 class Book
-  attr_accessor :author, :page_count, :genre
-  attr_reader :title
-
+  attr_accessor :author, :page_count # remove the attr_accessor for genre
+  attr_reader :title, :genre # add an attr_reader for genre
+  
+  GENRES = []
+  
   def initialize(title)
     @title = title
+  end
+  
+   
+  # create the writer for genre and add the logic for the class constant
+  def genre=(genre)
+    @genre = genre
+    GENRES << genre unless GENRES.include?(genre)
   end
 
   def turn_page
