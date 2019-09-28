@@ -2,11 +2,12 @@ class Shoe
   attr_accessor :color, :size, :material, :condition
   attr_reader :brand
   
-  BRANDS = []
+  BRANDS = Set.new
 
   def initialize(brand)
     @brand = brand
     BRANDS << brand unless BRANDS.include?(brand)
+    BRANDS.
   end
 
   def cobble
